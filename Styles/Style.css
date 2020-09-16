@@ -1,0 +1,55 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Oswald', sans-serif;
+  }
+  
+  nav {
+    width: 100%;
+    background-color: #4c4d50;
+    padding-left: auto;
+    padding-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    display: inline-block;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-item a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .nav-item:hover {
+    background-color: white;
+  }
+  
+  .nav-item:hover a {
+    color: #4c4d50;
+  }
+  
+  .logo img {
+    width: 175px;
+    vertical-align: middle;
+  }
+  
