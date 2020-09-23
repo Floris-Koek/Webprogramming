@@ -1,15 +1,19 @@
+/* Setting up the flexbox navigation menu */
 html {
     box-sizing: border-box;
   }
-  
-  *,
-  *::before,
-  *::after {
+
+/* overriding standard settings */
+*,
+*::before,
+*::after {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
   }
   
+/* all general settings go here such as font, background color etc*/
+
   body {
     font-family: 'Oswald', sans-serif;
   }
@@ -22,10 +26,6 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .logo {
-    display: inline-block;
   }
   
   .nav-links {
@@ -52,4 +52,33 @@ html {
     width: 175px;
     vertical-align: middle;
   }
-  
+
+/* Just a quick heads-up: have you seen that the Fontys logo is clickable? Why don't you try that right now  */
+.logo {
+    display: inline-block;
+  }
+
+/* Need to replace this with a proper way to create spacing */
+  .spacing {
+    padding: 50px 0 50px 50px;
+    background-color: #4c4d50;
+    margin: 0 0 100px;
+    color: white;
+  }
+
+/* Need to replace this with a proper way to create spacing */
+
+.footer {
+  padding: 100px 0 100px 50px;
+  background-color: #4c4d50;
+  margin: 100px 0 0 0;
+  color: white;
+}
+
+  .EmbassyFont {
+    text-align: center;
+    color: #0031A0;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    line-height: 22.4px;
+  }
