@@ -16,6 +16,7 @@ Global properties
 
   body {
     font-family: 'Oswald', sans-serif;
+    font-size: 14px;
   }
  
 /* ==============
@@ -57,7 +58,10 @@ Navigation menu
     vertical-align: middle;
   }
 
-/* Just a quick heads-up: have you seen that the Fontys logo is clickable? Why don't you try that right now  */
+/* ============== 
+/* Just a quick heads-up: have you seen that the Fontys logo is clickable? Why don't you try that right now
+============== */
+
   .logo {
     display: inline-block;
   }
@@ -66,20 +70,19 @@ Navigation menu
 Block properties
 ============== */
 
-  .spacing {
+  .Wide-divider {
     padding: 50px 0 50px 50px;
     background-color: #4c4d50;
-    margin: 0 0 100px;
     color: white;
   }
 
   .footer {
     display: block;
     width: 100%;
-    padding: 100px 0 100px 50px;
+    padding: 50px 0 50px 50px;
     background-color: #4c4d50;
-    margin: 100px 0 0 0;
     color: white;
+    text-align: center;
   }
 
 /* ==============
@@ -87,11 +90,11 @@ Grid settings
 ============== */
 
   .container {
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    /* margin-left: auto;
+    margin-right: auto; */
     height: 600px;
-    margin: 2rem;
+    /* margin: 10px; */
     display: inline-grid;
     grid-template-columns: 70vw 1fr;
     grid-template-rows: 25% 75%;
@@ -109,7 +112,7 @@ Cell 1
 ============== */
 
   .cell-1 {
-      background: deepskyblue;
+      background: black;
     }
 
   .Cell-1 header {
@@ -121,7 +124,7 @@ Cell 2
 ============== */
 
   .cell-2 {
-    background: orangered;
+    background: black;
   }
 
 /* ==============
@@ -129,28 +132,29 @@ Cell 3
 ============== */
 
   .cell-3 {
-    background: url('../img/HeinekenBackground.jpg');
+    /* background: url('../img/HeinekenBackground.jpg');
     background-position: center;
-    background-size: 160%;
+    background-size: 160%; */
+    background: darkgreen;
   }
 
   .cell-3 img {
     height: 300px;
     width: auto;
-    transition: 0.3s;
+    /* transition: 0.3s; */
   }
   
-  .cell-3 img:hover {
+  /* .cell-3 img:hover {
     transform: scale(1.3);
     transition: 0.3s;
-  }
+  } */
 
 /* ==============
 Cell 4
 ============== */
 
   .cell-4 {
-    background: gold;
+    background: green;
   }
 
   .cell-4 img {
