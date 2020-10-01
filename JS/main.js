@@ -1,3 +1,21 @@
+// ==========================
+// Dag Hobie!
+// Het betreft de onderstaande code.
+// Ik snap niet zo goed waarom dit het niet doen, maar ik heb sowiezo nog wat moeite met het begrijpen van variables
+// Zou je kunnen toelichten wat hier het probleem is en ik anders moet doen?
+// Het liefste zodat ik in de toekomst snap wat ik dan moet doen :)
+// Groetjes!
+// ==========================
+
+var clickTwo = $('#LearningGoals');
+clickTwo.to(window, {duration: 2, scrollTo: "LearningGoals"});
+
+
+// ==========================
+// Tot hier
+// ==========================
+
+
 
 // ==========================
 // First GSAP animation
@@ -15,36 +33,27 @@ gsap.to(".item", {
 });
 
 // ==========================
-// Animating the heineken logo
+// Timeline which handles the first fase of the animation
+// fo stand for fase one
 // ==========================
-
-gsap.to(".Heineken", {
-    duration: 2,
-    rotation:360,
-});
-
-// ==========================
-// Timeline which handles the animation of the bottles
-// fo stand for fase one, the fase where the normal heineken bottles appear
-// ==========================
-
-var fo = gsap.timeline();
 
 // Sets the settings for the timeline
-fo.set(".bottleOne, .bottleTwo, .bottleThree", {transformOrigin: "50% 50%"});
+var fo = gsap.timeline();
+fo.set(".bottleOne, .bottleTwo, .bottleThree", {transformOrigin: "50% 50%", rotation: -25});
 
-//Sets the bottles in the inital rotated state
-fo.to(".bottleOne, .bottleTwo, .bottleThree", {
-    duration: 0,
-    rotation: -25
-    });
+// Animating the heineken logo
+fo.set(".Heineken", {rotation: 40});
+fo.to(".Heineken", {
+    duration: 1,
+    rotation:0,
+});
 
 // Specifications the coming in of bottle 1
 fo.from(".bottleOne", {
     duration: 1.5,
     opacity: 1,
     x: -800
-    });
+    },0);
 
 //sets the first bottle up right
 fo.to(".bottleOne", {
