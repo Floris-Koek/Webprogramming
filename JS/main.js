@@ -1,14 +1,19 @@
 // ==========================
 // Dag Hobie!
 // Het betreft de onderstaande code.
-// Ik snap niet zo goed waarom dit het niet doen, maar ik heb sowiezo nog wat moeite met het begrijpen van variables
+// Ik snap niet zo goed waarom dit het niet doet, maar ik heb sowiezo nog wat moeite met het begrijpen van variables
 // Zou je kunnen toelichten wat hier het probleem is en ik anders moet doen?
 // Het liefste zodat ik in de toekomst snap wat ik dan moet doen :)
-// Groetjes!
 // ==========================
 
-var clickTwo = $('#LearningGoals');
-clickTwo.to(window, {duration: 2, scrollTo: "LearningGoals"});
+
+$(document).ready(function(){
+    $( ".nav-item > a" ).click(function( event ) {
+        event.preventDefault();
+        $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top }, 500);
+    });
+});
+
 
 
 // ==========================
