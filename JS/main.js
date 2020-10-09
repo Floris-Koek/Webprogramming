@@ -22,14 +22,24 @@ gsap.to(".item", {
 });
 
 // ==========================
-// initialisation and start of fase one
+// initialisation of the timeline
 // ==========================
 
-var f1 = gsap.timeline();
-f1.set(".bottleOne, .bottleTwo, .bottleThree", {transformOrigin: "50% 50%", rotation: -35});
+var Animation = gsap.timeline();
+Animation
+.set(".bottleOne, .bottleTwo, .bottleThree", {transformOrigin: "50% 50%", rotation: -35})
+//ensure the ZeroBottles end up in the correct place and arent visible before the animation
+.set(".bottleZeroOne", {x: -207, opacity: 0})
+.set(".bottleZeroTwo", {x: -185, opacity: 0})
+.set(".bottleZeroThree", {x: -165, opacity: 0})
+.set(".Heineken", {rotation: 35})
+
+// ==========================
+// Start of fase 1
+// ==========================
 
 // moves in the first bottle and moves it to the position as intented. This is basicly just a glorified float for all purposes. Also rotates it to 0
-f1.fromTo(".bottleOne", {
+.fromTo(".bottleOne", {
     duration: 2.5,
     x: -800
         },
@@ -38,10 +48,10 @@ f1.fromTo(".bottleOne", {
     x: 150,
     rotation: 0,
     ease: "back"
-    },0);
+})
 
 // moves in the second bottle and rotates it to 0
-f1.fromTo(".bottleTwo", {
+.fromTo(".bottleTwo", {
     duration: 2.5,
     x: -500
         },
@@ -50,10 +60,10 @@ f1.fromTo(".bottleTwo", {
     x: 150,
     rotation: 0,
     ease: "back"
-    },0);
+},0)
 
 // moves in the thirt bottle and rotates it to 0
-f1.fromTo(".bottleThree", {
+.fromTo(".bottleThree", {
     duration: 2.5,
     x: -300
         },
@@ -62,31 +72,15 @@ f1.fromTo(".bottleThree", {
     x: 150,
     rotation: 0,
     ease: "back"
-    },0);
+},0)
+
+.add("ByeFaseOne", "+=0.5")
 
 // ==========================
-// initialisation and start of fase two
+// Start of fase 2
 // ==========================
 
-//Setting the value where the bottles need to end up and making it invisible before the animation
-var f2 = gsap.timeline();
-f2
-.set(".bottleZeroOne", {x: -207, opacity: 0})
-.set(".bottleZeroTwo", {x: -185, opacity: 0})
-.set(".bottleZeroThree", {x: -165, opacity: 0});
-
-// ******************************************
-//TODO: 
-//Start timeline after end of previous one
-// ******************************************
-
-// ******************************************
-//TODO: 
-//Have the initial bottles disapear
-// ******************************************
-
-// moves in the first zeroBottle and makes it visible
-f2
+// moves in the first zeroBottle after fase 1 and makes it visible
 .fromTo(".bottleZeroOne", {
     duration: 2,
     y: -1000,
@@ -95,16 +89,15 @@ f2
     ease: Power4.easeOut,
     y: 0,
     duration: 2.5
-    },0)
+},"ByeFaseOne")
 
+//Makes the bottle visible at the start of the previous animation
 .to(".bottleZeroOne", {
     opacity: 1,
     duration: 0.1
-},0)
-;
+},"<")
 
-// moves in the second zeroBottle and makes it visible
-f2
+// moves in the second zeroBottle after fase 1 and makes it visible with minimal delay
 .fromTo(".bottleZeroTwo", {
     duration: 2,
     y: -1000,
@@ -113,17 +106,14 @@ f2
     ease: Power4.easeOut,
     y: 0,
     duration: 2.5
-    },0.2)
+},"ByeFaseOne+=0.1")
 
 .to(".bottleZeroTwo", {
         opacity: 1,
         duration: 0.1
-    },0)
-;
+},"<")
 
-
-// moves in the thirth zeroBottle and makes it visible
-f2
+// moves in the third zeroBottle after fase 1 and makes it visible with slight delay
 .fromTo(".bottleZeroThree", {
     duration: 2,
     y: -1000,
@@ -132,39 +122,43 @@ f2
     ease: Power4.easeOut,
     y: 0,
     duration: 2.5
-    },0.3)
+    },"ByeFaseOne+=0.2")
 
 .to(".bottleZeroThree", {
         opacity: 1,
         duration: 0.1
-},0);
+},"<")
+
+//******************* 
+//TODO: Make initial bottles disapear
+//******************* 
+
+.to(".bottleOne, .bottleTwo, .bottleThree", {
+    y: 700,
+    stagger: 0.1
+},"-=2.1")
+.to(".bottleOne, .bottleTwo, .bottleThree", {
+    opacity: 0,
+    duration: 0.1,
+    // ease
+},">=+0.3")
+
+
+.add("ComeInFinish")
 
 // ==========================
-// initialisation and start of fase three
+// Start of fase 3
 // ==========================
 
-var f3 = gsap.timeline();
-f3.set(".Heineken", {rotation: 20});
-
-// ******************************************
-//TODO: 
-//Start timeline after end of previous one
-// ******************************************
-
-//Move in the 0% and net zo lekker from the right with slight stagger
-f3.from(".Percentage, .Subheader", {
+.from(".Percentage", {
     x:400,
-    stagger: 0.5
-},2);
+},"ComeInFinish")
 
-// Animating the heineken logo in
-f3.from(".Heineken", {
-    scale:0,
-    duration: 1,
-    ease: "back"
-});
+.from(".Subheader, .Heineken", {
+    x:400,
+},"=+1")
 
-//Adjusting the rotation of the heinekenlogo halfway through
-f3.to(".Heineken",{
-    rotation:0,
-},"-=1");
+.to(".Heineken", {
+    rotation: 0,
+    duration: 0.5
+},"<");
