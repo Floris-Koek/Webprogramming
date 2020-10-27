@@ -2,21 +2,33 @@
 Global properties
 ============== */
 
-/* Setting up the flexbox navigation menu */
+/* Because I genuinely hate having to consider what is actually in the div.
+Just do what I say robot, dammit!  */
   html {
     box-sizing: border-box;
   }
 
 /* overriding standard settings */
+/* This removes the standard margins on items. The pseudo before and after are because those are the only excluded items from *. I know, I hate it as well. */
   *, *::before, *::after {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
   }
 
+/* I should have everything covered in my later Typography section but in case i dont; save me globals. 
+Further more, I could even use REM/EM now if I would like to do so as now one EM equals one px/10 */
+
   body {
     font-family: 'Oswald', sans-serif;
-    font-size: 14px;
+    font-size: 62.5%;
+    color: white;
+    background-image: url(../img/double-bubble-dark.png);
+    background-repeat: repeat;
+  }
+
+  img {
+
   }
  
 /* ==============
@@ -39,20 +51,31 @@ Navigation menu
   }
   
   .nav-item a {
+    font-size: 2em;
     display: inline-block;
     padding: 10px 15px;
     text-decoration: none;
     color: white;
   }
   
+  .nav-item {
+    transition: 0.3s;
+  }
+
   .nav-item:hover {
     background-color: white;
+    transition: 0.3s;
   }
   
-  .nav-item:hover a {
+  .nav-item a {
+    transition: 0.3s;
+  }
+
+  .nav-item a:hover {
     color: #4c4d50;
+    transition: 0.3s;
   }
-  
+
   .logo img {
     width: 175px;
     vertical-align: middle;
@@ -86,19 +109,73 @@ Block properties
   }
 
 /* ==============
-Grid settings
+Grid & Flexbox settings
 ============== */
 
   .container {
     width: 100%;
-    /* margin-left: auto;
-    margin-right: auto; */
-    height: 600px;
-    /* margin: 10px; */
+    height: auto;
     display: inline-grid;
     grid-template-columns: 70vw 1fr;
     grid-template-rows: 25% 75%;
   }
+
+  .column-wrapper {
+    margin: 0 1.5em 0 1.5em;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    border: 1px solid red;
+  }
+
+  .full-width-col {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 3;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Alright. This was the point where I discovered: shit. I do in fact not have less or sass installed and setting that up as well would further increase this gigantic project. So, unfortunatly, prepare for a lot of col's. */
+
+  .col-1 {
+    height: auto;
+    margin: 2em;
+  }
+
+  .col-1 img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .col-2 {
+    height: 100px;
+    margin: 2em 2em 0 2em;
+  }
+  
+  .col-3 {
+    height: 100px;
+    margin: 2em;
+  }
+
+  .col-4 {
+    height: 100px;
+    margin: 2em;
+  }
+  
 
   .cell {
     color: white;
@@ -108,7 +185,7 @@ Grid settings
   }
 
 /* ==============
-Cell 1
+Cells
 ============== */
 
   .cell-1 {
@@ -119,39 +196,18 @@ Cell 1
       font-size: 50px;
   }
 
-/* ==============
-Cell 2
-============== */
-
   .cell-2 {
     background: black;
   }
 
-/* ==============
-Cell 3
-============== */
-
   .cell-3 {
-    /* background: url('../img/HeinekenBackground.jpg');
-    background-position: center;
-    background-size: 160%; */
     background: darkgreen;
   }
 
   .cell-3 img {
     height: 300px;
     width: auto;
-    /* transition: 0.3s; */
   }
-  
-  /* .cell-3 img:hover {
-    transform: scale(1.3);
-    transition: 0.3s;
-  } */
-
-/* ==============
-Cell 4
-============== */
 
   .cell-4 {
     background: green;
@@ -166,7 +222,23 @@ Cell 4
     font-size: 50px;
   }
 
-  .bottleZeroOne {
-    scale: 200%;
-    width: auto;
-  }
+/* ==============
+typography
+============== */
+
+h1 {
+  font-size: 3.6em;
+  text-align: center;
+}
+
+h2 {
+
+}
+
+h3 {
+  
+}
+
+p {
+  font-size: 1.4em;
+}

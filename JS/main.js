@@ -162,3 +162,10 @@ Animation
     rotation: 0,
     duration: 0.5
 },"<");
+
+// .to(".Heineken", {
+//     yoyo: true,
+//     duration: 0.7,
+//     scaleY: 1.5,
+//     scaleX: 1.5
+// });
