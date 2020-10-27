@@ -162,18 +162,18 @@ Grid & Flexbox settings
   }
 
   .col-2 {
-    height: 100px;
-    margin: 2em 2em 0 2em;
+    height: auto;
+    margin: 5em;
   }
   
   .col-3 {
-    height: 100px;
-    margin: 2em;
+    height: auto;
+    margin: 5em;
   }
 
   .col-4 {
-    height: 100px;
-    margin: 2em;
+    height: auto;
+    margin: 5em;
   }
   
 
@@ -241,4 +241,8 @@ h3 {
 
 p {
   font-size: 1.4em;
+}
+
+p.main {
+  font-size: 2em;
 }
