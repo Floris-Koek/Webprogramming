@@ -136,11 +136,9 @@ Grid & Flexbox settings
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
-    border: 1px solid red;
   }
 
   .full-width-col {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
