@@ -7,6 +7,10 @@ Furthermore is the repository linked to a Azure CI-pipeline and when it recieves
 you can visit this webpage at:
 https://webprogrammingdbc.azurewebsites.net/
 
+This project has been made to experiment with different factors of Webdelopment, being Git, cloud hosting and javascript.
+The final product is an animation that could theoraticly be used by a company.
+Newer versions would include more advanced techniques and animations.
+
 To open any of these files, simply download the code using the big green button when visiting the repository. Come on, you can't miss that one.
 Then, open the files with a IDE or texteditor. I personally love Visual studio but if sublime, brackets or (god forbid) VIM is your thing thats fine as well; whatever floats your boat.
 Here you can edit the code yourself.
